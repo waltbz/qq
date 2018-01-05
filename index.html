@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="css/main.css">
+	<title>Document</title>
+</head>
+<body>
+	<div class="top">
+		<img src="img/1.jpg" alt="头像" class="logo">
+		<span class="top-title">消息</span>
+		<a class="btn-more" href="javascript:;">+</a>
+	</div>
+	<div id="app" class="main">
+		<div class="main-list main-news">
+			<ul class="clearfix">
+				<li v-for="(item,index) in news">
+					<a href="javascript:;" class="clearfix">
+						<img v-bind:src="item.url" alt="头像" class="news-logo">
+						<div class="news-intro">
+							<span class="news-intro-title">{{item.name}}</span>
+							<span class="news-intro-info">{{item.text}}</span>
+						</div>
+						<div class="news-time">
+							<span>{{item.time}}</span>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="main-list main-friends">
+			<div class="friends-nav">
+				<ul class="clearfix">
+					<li class="active">
+						<a href="javascript:;">好友</a>
+					</li>
+					<li ><a href="javascript:;">群</a></li>
+					<li ><a href="javascript:;">多人聊天</a></li>
+					<li ><a href="javascript:;">设备</a></li>
+					<li ><a href="javascript:;">通讯录</a></li>
+					<li ><a href="javascript:;">公众号</a></li>
+				</ul>
+			</div>
+			<div class="nav-content nav-content-friend active">
+				<ul>
+					<li v-for="(item,index) in linkmanFirends" >
+						<a class="clearfix" href="javascript:;">
+							{{item.groupName}}
+							<div class="nav-content-number">
+								<span class="nav-content-online">{{item.onLineNumber}}</span>/
+								<span class="nav-content-total">{{item.total}}</span>
+							</div>
+						</a>
+						<div class="nav-content-list">
+							<ul>
+								<li v-for="(item2,index) in item.fIntro">
+									<a class="clearfix" href="javascript:;">
+										<img v-bind:src="item2.url" alt="">
+										<div>
+											<span class="name">{{item2.fName}}</span>
+											<span class="intro">{{item2.ff}}</span>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="nav-content nav-content-group">
+				<ul>
+					<li v-for="(item,index) in linkmanGroups" >
+						<a class="clearfix" href="javascript:;">
+							{{item.groupName}}
+							<div class="nav-content-number">
+								<!-- <span class="nav-content-online">{{item.onLineNumber}}</span>/ -->
+								<span class="nav-content-total">{{item.total}}</span>
+							</div>
+						</a>
+						<div class="nav-content-list">
+							<ul>
+								<li v-for="(item2,index) in item.fIntro">
+									<a class="clearfix" href="javascript:;">
+										<img v-bind:src="item2.url" alt="">
+										<div>
+											<span class="name">{{item2.fName}}</span>
+											<!-- <span class="intro">{{item2.ff}}</span> -->
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="main-list main-trends active">
+			<div class="trends-top-list">
+				<ul class="clearfix">
+					<li class="t-trends"><a href="javascript:;">好友动态</a></li>
+					<li class="t-nearby"><a href="javascript:;">附近</a></li>
+					<li class="t-interest"><a href="javascript:;">兴趣部落</a></li>
+				</ul>
+			</div>
+			<div class="trends-center-list">
+				<ul>
+					<li class="t-game"><a href="">游戏<span class="icon-arrow"></span></a></li>
+					<li class="t-day"><a href="">日迹<span class="icon-arrow"></span></a></li>
+					<li class="t-view"><a href="">看点<span class="icon-arrow"></span></a></li>
+					<li class="t-read"><a href="">阅读<span class="icon-arrow"></span></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<ul class="clearfix">
+			<li class="news"><a href="javascript:;"><span class="footer-title">消息</span></a></li>
+			<li class="friends"><a href="javascript:;"><span class="footer-title">联系人</span></a></li>
+			<li class="trends active"><a href="javascript:;"><span class="footer-title">动态</span></a></li>
+		</ul>
+	</div>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/main.js"></script>
+</html> 
